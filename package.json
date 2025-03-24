@@ -1,0 +1,22 @@
+{
+  "name": "@dandre3000/is-main-thread",
+  "type": "module",
+  "exports": {
+    "node": "./dist/node.index.js",
+    "default": "./dist/web.index.js"
+  },
+  "scripts": {
+    "transpile": "bunx esbuild src/web.index.ts --format=esm --outfile=dist/web.index.js && bunx esbuild src/node.index.ts --format=esm --platform=node --outfile=dist/node.index.js",
+    "minify": "bunx terser dist/web.index.js -m -o dist/web.index.js && bunx terser dist/node.index.js -m -o dist/node.index.js",
+    "build": "bun run transpile && bun run minify",
+    "test": "node --test __tests__/node.js && bun test ./__tests__/bun.js && deno test ./__tests__/deno.js --allow-read"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.5",
+    "@types/deno": "^2.2.0",
+    "@types/node": "^22.13.4",
+    "esbuild": "^0.25.1",
+    "expect": "^29.7.0",
+    "terser": "^5.39.0"
+  }
+}
