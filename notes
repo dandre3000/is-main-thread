@@ -1,3 +1,0 @@
-Transferring MessagePort from worker thread does not work using Bun https://github.com/oven-sh/bun/issues/15931
-Transfering a MessagePort from main.js to worker.js works, just not the other way around.
-It also works when transfering a MessagePort over another MessagePort, just not when going through postMessage directly from the parentPort.
