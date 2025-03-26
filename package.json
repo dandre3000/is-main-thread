@@ -7,7 +7,7 @@
   },
   "files": ["./dist/"],
   "scripts": {
-    "build": "bun build ./src/node.index ./src/web.index.js --outdir ./dist --minify",
+    "build": "bunx terser src/web.index.js -m -o dist/web.index.js && bunx terser src/node.index.js -m -o dist/node.index.js",
     "test": "node --test __tests__/node.js && bun test ./__tests__/bun.js && deno test ./__tests__/deno.js --allow-read"
   },
   "devDependencies": {
