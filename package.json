@@ -5,7 +5,13 @@
     "node": "./dist/node.index.js",
     "default": "./dist/web.index.js"
   },
-  "files": ["./dist/"],
+  "files": ["dist/"],
+  "keywords": [
+    "isMainThread",
+    "threads",
+    "Worker",
+    "worker_threads"
+  ],
   "scripts": {
     "build": "bunx terser src/web.index.js -m -o dist/web.index.js && bunx terser src/node.index.js -m -o dist/node.index.js",
     "test": "node --test __tests__/node.js && bun test ./__tests__/bun.js && deno test ./__tests__/deno.js --allow-read"
@@ -14,7 +20,6 @@
     "@types/bun": "^1.2.5",
     "@types/deno": "^2.2.0",
     "@types/node": "^22.13.4",
-    "esbuild": "^0.25.1",
     "expect": "^29.7.0",
     "terser": "^5.39.0"
   }
