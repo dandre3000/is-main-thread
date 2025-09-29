@@ -1,30 +1,33 @@
 {
   "name": "@dandre3000/is-main-thread",
-  "version": "1.0.0",
-  "type": "module",
-  "exports": {
-    "node": "./dist/node.index.js",
-    "default": "./dist/web.index.js"
+  "version": "1.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "DeAundre Payne",
+    "email": "apps.fondling796@passinbox.com",
+    "url": "https://github.com/dandre3000"
   },
-  "files": ["dist/"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dandre3000/is-main-thread.git"
+  },
+  "exports": {
+    "bun": "./bun.js",
+    "node": "./node.js",
+    "default": "./browser.js"
+  },
+  "description": "Check if javascript code is running in the main thread or in a worker thread. This module is compatible with web browsers, bun, deno and node.js.",
   "keywords": [
     "isMainThread",
     "threads",
     "Worker",
     "worker_threads"
   ],
-  "scripts": {
-    "build": "bunx terser src/web.index.js -m -o dist/web.index.js && bunx terser src/node.index.js -m -o dist/node.index.js",
-    "test": "node --test __tests__/node.js && bun test ./__tests__/bun.js && deno test ./__tests__/deno.js --allow-read"
-  },
+  "files": ["./bun.js", "./node.js", "browser.js"],
   "devDependencies": {
     "@types/bun": "^1.2.5",
     "@types/deno": "^2.2.0",
-    "@types/node": "^22.13.4",
-    "expect": "^29.7.0",
-    "terser": "^5.39.0"
+    "@types/node": "^22.13.4"
   },
-  "publishConfig": {
-    "access": "public"
-  }
+  "type": "module"
 }
