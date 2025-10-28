@@ -11,11 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/dandre3000/is-main-thread.git"
   },
-  "exports": {
-    "bun": "./bun.js",
-    "node": "./node.js",
-    "default": "./browser.js"
-  },
   "description": "Check if javascript code is running in the main thread or in a worker thread. This module is compatible with web browsers, bun, deno and node.js.",
   "keywords": [
     "isMainThread",
@@ -23,7 +18,13 @@
     "Worker",
     "worker_threads"
   ],
-  "files": ["./bun.js", "./node.js", "browser.js"],
+  "files": ["./index.d.ts", "./bun.js", "./node.js", "browser.js"],
+  "exports": {
+    "bun": "./bun.js",
+    "node": "./node.js",
+    "default": "./browser.js"
+  },
+  "types": "./index.d.ts",
   "devDependencies": {
     "@types/bun": "^1.2.5",
     "@types/deno": "^2.2.0",
