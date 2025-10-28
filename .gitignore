@@ -1,4 +1,4 @@
 node_modules/
-untracked/
-bun.lock
+ignore/
+package-lock.json
 deno.lock
